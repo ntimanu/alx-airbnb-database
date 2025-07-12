@@ -15,3 +15,15 @@ Retrieves all properties along with any reviews they received. Properties with n
 Retrieves all users and all bookings, even if they are not linked.
 
 These queries are based on the Airbnb ERD provided and focus on demonstrating relational data linking using SQL.
+
+# Subqueries – ALX Airbnb Database
+
+This file includes examples of:
+
+### ✅ Non-Correlated Subquery
+
+- Finds properties with an average rating above 4.0 by calculating the average from the `reviews` table.
+
+### ✅ Correlated Subquery
+
+- Identifies users who have made more than 3 bookings by evaluating booking count per user within the subquery.

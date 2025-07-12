@@ -1,8 +1,6 @@
 # Query Optimization Report
 
-## 🔍 Initial Query Analysis
-
-We executed the following query to retrieve bookings along with users, properties, and payments:
+## 🔍 Initial Query (with WHERE clause)
 
 ```sql
 SELECT
@@ -21,5 +19,9 @@ FROM
     bookings b
 JOIN users u ON b.user_id = u.user_id
 JOIN properties p ON b.property_id = p.property_id
-JOIN payments pay ON b.booking_id = pay.booking_id;
+JOIN payments pay ON b.booking_id = pay.booking_id
+WHERE
+    b.start_date >= CURRENT_DATE - INTERVAL '30 days'
+    AND pay.amount > 0;
+
 ```

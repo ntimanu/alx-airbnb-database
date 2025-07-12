@@ -27,3 +27,16 @@ This file includes examples of:
 ### ✅ Correlated Subquery
 
 - Identifies users who have made more than 3 bookings by evaluating booking count per user within the subquery.
+
+# Aggregations and Window Functions – ALX Airbnb Database
+
+This module demonstrates:
+
+### ✅ Total Bookings per User
+
+- Uses `COUNT()` and `GROUP BY` to count how many bookings each user has made.
+
+### ✅ Ranking Properties by Bookings
+
+- Uses `RANK()` window function to rank properties based on total bookings received.
+- Also supports alternative with `ROW_NUMBER()` if strict ordering is required.

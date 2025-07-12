@@ -28,15 +28,33 @@ This file includes examples of:
 
 - Identifies users who have made more than 3 bookings by evaluating booking count per user within the subquery.
 
-# Aggregations and Window Functions – ALX Airbnb Database
+# 📊 Aggregations and Window Functions – ALX Airbnb Database Project
 
-This module demonstrates:
+## 🎯 Objective
 
-### ✅ Total Bookings per User
+The goal of this task is to use SQL **aggregation** and **window functions** to analyze Airbnb data, such as user booking activity and property performance.
 
-- Uses `COUNT()` and `GROUP BY` to count how many bookings each user has made.
+---
 
-### ✅ Ranking Properties by Bookings
+## ✅ Queries Implemented
 
-- Uses `RANK()` window function to rank properties based on total bookings received.
-- Also supports alternative with `ROW_NUMBER()` if strict ordering is required.
+### 1️⃣ Total Number of Bookings per User
+
+- **Description**: Retrieves how many bookings each user has made.
+- **SQL Concepts**: `COUNT()`, `GROUP BY`, `JOIN`
+
+```sql
+SELECT
+    u.user_id,
+    u.first_name,
+    u.last_name,
+    COUNT(b.booking_id) AS total_bookings
+FROM
+    users u
+JOIN
+    bookings b ON u.user_id = b.user_id
+GROUP BY
+    u.user_id, u.first_name, u.last_name
+ORDER BY
+    total_bookings DESC;
+```
